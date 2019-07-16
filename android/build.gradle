@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+repositories {
+    mavenCentral()
+}
+
 android {
     compileSdkVersion 27
     buildToolsVersion '28.0.3'
@@ -21,6 +25,7 @@ android {
 dependencies {
     // Google's GCM.
 //    compile 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
     compile "com.google.firebase:firebase-messaging:17.3.0"
     compile 'com.facebook.react:react-native:+'
 

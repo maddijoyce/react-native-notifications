@@ -25,6 +25,7 @@ import com.wix.reactnativenotifications.core.notification.PushNotificationProps;
 import com.wix.reactnativenotifications.core.notificationdrawer.IPushNotificationsDrawer;
 import com.wix.reactnativenotifications.core.notificationdrawer.PushNotificationsDrawer;
 import com.wix.reactnativenotifications.gcm.FcmInstanceIdRefreshHandlerService;
+import me.leolin.shortcutbadger.ShortcutBadger;
 
 import com.google.firebase.FirebaseApp;
 
@@ -112,6 +113,11 @@ public class RNNotificationsModule extends ReactContextBaseJavaModule implements
     public void isRegisteredForRemoteNotifications(Promise promise) {
         boolean hasPermission = NotificationManagerCompat.from(getReactApplicationContext()).areNotificationsEnabled();
         promise.resolve(new Boolean(hasPermission));
+    }
+
+    @ReactMethod
+    public void setBadgesCount(int count) {
+        ShortcutBadger.applyCount(getReactApplicationContext(), count);
     }
 
     protected void startGcmIntentService(String extraFlag) {
