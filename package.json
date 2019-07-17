@@ -19,7 +19,7 @@
     "actionable-notifications",
     "interactive-notifications"
   ],
-  "main": "lib/src/index",
+  "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
   "scripts": {
     "pretest": "./node_modules/.bin/eslint *.js test",
