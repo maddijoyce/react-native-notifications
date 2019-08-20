@@ -21,7 +21,9 @@ export const events: {
     RegistrationEventType,
     { deviceToken: string }
   >;
-  notifications: NotificationsEventEmitter<NotificationEventType, any>;
+  notifications: NotificationsEventEmitter<NotificationEventType, any> & {
+    getInitialNotification: () => Promise<any | undefined>;
+  };
 };
 
 export const badge: {
